@@ -5,13 +5,16 @@ sap.ui.define([
     
     return myUIComponent.extend("freestyledozerov02.Component",{
         metadata: {
-            rootView: {
-                "viewName": "freestyledozerov02.view.Worklist",
-                "type": "XML",
-                "async": true,
-                "id": "app"
-            }
+            manifest: "json"
         },
+        // metadata: {
+        //     rootView: {
+        //         "viewName": "freestyledozerov02.view.Worklist",
+        //         "type": "XML",
+        //         "async": true,
+        //         "id": "app"
+        //     }
+        // },
 
         /////INITIALIZATION
         init: function() {

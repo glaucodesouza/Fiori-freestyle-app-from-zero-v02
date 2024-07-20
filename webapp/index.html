@@ -12,10 +12,16 @@
         data-sap-ui-resourceroots='{
             "freestyledozerov02": "./"
         }'
-        data-sap-ui-oninit="module:freestyledozerov02/index"
+        data-sap-ui-onInit="module:sap/ui/core/ComponentSupport"
     ></script>
 </head>
 <body id="myIndexContent">
     <p>Hi Fiori App from zero v2 !</p>
+    <div 
+        data-sap-ui-component data-name="freestyledozerov02"
+        data-id="container"
+        data-settings='{"id": "idfreestyledozerov02"}'
+    >
+    </div>
 </body>
 </html>
