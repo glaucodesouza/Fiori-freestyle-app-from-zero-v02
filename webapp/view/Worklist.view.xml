@@ -1,0 +1,20 @@
+<mvc:View
+    xmlns="sap.m"
+    xmlns:t="sap.ui.table"
+    xmlns:mvc="sap.ui.core.mvc"
+    >
+    
+    <Text text="Ola mundo pela View"/>
+
+	<VBox class="sapUiSmallMargin">
+		<Label text="Default RadioButton use" labelFor="GroupA" />
+		<RadioButtonGroup id="GroupA">
+			<RadioButton text="Option 1" selected="true" />
+			<RadioButton text="Option 2" />
+			<RadioButton text="Option 3" />
+			<RadioButton text="Option 4" />
+			<RadioButton text="Option 5" />
+		</RadioButtonGroup>
+	</VBox>
+
+</mvc:View>
