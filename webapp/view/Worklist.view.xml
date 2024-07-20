@@ -5,7 +5,7 @@
 	controllerName="freestyledozerov02.controller.Worklist"
     >
     
-    <Text text="Ola mundo pela View"/>
+    <Text id="Text" text="Ola mundo pela View"/>
 
 	<VBox class="sapUiSmallMargin">
 		<Label text="Default RadioButton use" labelFor="GroupA" />

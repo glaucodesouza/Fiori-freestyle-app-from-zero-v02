@@ -17,7 +17,7 @@ sap.ui.define([
             onInit: function(){
                 alert("on init");
                 // Modificar o texto do botão da VEIW
-                this.byId("botao").setText("Novo Texto pelo oninit(), mas, me clica !");
+                this.byId("Text").setText("Novo Texto pelo oninit() do Controller!");
             },
     
             //MODULE PBO - AT SELECTION SCREEN OUTPUT
