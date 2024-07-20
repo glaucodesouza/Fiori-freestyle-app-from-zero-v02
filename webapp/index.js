@@ -1,15 +1,28 @@
 sap.ui.define([
-    // "sap/m/Text",
-    // "sap/m/Button"	
-    "sap/ui/core/mvc/XMLView"
+    // "sap/ui/core/mvc/XMLView"
+    "sap/ui/core/ComponentContainer"
 
-], function(XMLView) {
+], function(
+    // XMLView
+    myComponentContainer
+) {
     'use strict';
     
-    XMLView.create({
-        viewName: "freestyledozerov02.view.Worklist"
-    }).then(function (oView) {
-        oView.placeAt("myIndexContent");
-    });
+    // alert('Alo dentro do index.js !');
+    
+    // XMLView.create({
+    //     viewName: "freestyledozerov01.view.App"
+    // }).then(function (oView) {
+    //     oView.placeAt("contentDoIndex");
+    // });
 
+    //informar ao meu Callback,
+    //que deve iniciar o meu Component.js
+    new myComponentContainer({
+        name: 'freestyledozerov02',
+        settings: {
+            id: 'idfreestyledozerov02' //id da aplicacao
+        },
+        async: true
+    }).placeAt('myIndexContent');
 });

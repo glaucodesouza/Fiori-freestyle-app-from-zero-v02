@@ -1,7 +1,7 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/m/MessageToast"
-    ], function(meuController, minhaMessageToast) {
+    ], function(myController, myMessageToast) {
         'use strict';
     
         // ----------------------------------------------------------------
@@ -9,10 +9,9 @@ sap.ui.define([
         // Assim, eu posso extender o Conrtoller standard
         // sap/ui/core/mvc/Controller
         // ----------------------------------------------------------------
-        return meuController.extend("freestyledozerov02.controller.Worklist", {
+        return myController.extend("freestyledozerov02.controller.Worklist", {
             //////////////////// ini metodos customizados (meus)
-    
-    
+        
             ///INITIALIZATION
             onInit: function(){
                 alert("on init");
@@ -40,7 +39,7 @@ sap.ui.define([
     
             onClique: function() {
                 // alert("ola pelo controller!");	
-                minhaMessageToast.show("Ola pessoal no onClique()")
+                myMessageToast.show("Ola pessoal no onClique()")
             }
             //////////////////// fim metodos customizados (meus)
         });
