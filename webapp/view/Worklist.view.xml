@@ -4,13 +4,17 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:semantic="sap.f.semantic"
     >    
-    <Text id="Text" text="Worklist"/>
-
+    
+<App id="worklist">
+<pages>
+<Page id="_IDGenPage1">
+<content>
+<Text id="Text" text="Worklist"/>
     <semantic:SemanticPage
         id="page"
         headerPinnable="false"
         toggleHeaderOnTitleClick="false"
-        showFooter="{= ${messagez>/}.length > 0 }">
+        showFooter="false">
 
         <semantic:titleHeading>
             <Title id="_IDGenTitle1"
@@ -85,7 +89,7 @@
                 <items>
                     <ColumnListItem id="_IDGenColumnListItem1"
                         type="Navigation"
-                        press=".onPress">
+                        press=".onTableLinePress">
                         <cells>
                             <ObjectIdentifier id="_IDGenObjectIdentifier1" title="{Codigo}"/>
                             <Text id="_IDGenText3" text="{Descricao}"/>
@@ -121,5 +125,8 @@
 		</semantic:footerCustomActions>
 
     </semantic:SemanticPage>
-
+    </content>
+</Page>
+</pages>
+</App>
 </mvc:View>

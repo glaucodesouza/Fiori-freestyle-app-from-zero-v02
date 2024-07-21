@@ -37,7 +37,8 @@
             "desktop": true,
             "tablet": true,
             "phone": true
-        }
+        },
+        "fullscreen": true
     },
 
     "sap.ui5": {
@@ -57,6 +58,12 @@
             "cozy": true
         },
         "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "freestyledozerov02.i18n.i18n"
+                }
+            },
             "": {
                 "dataSource": "mainService",
                 "preload": true,
@@ -75,7 +82,7 @@
                 "routerClass": "sap.m.routing.Router",
                 "viewType": "XML",
                 "viewPath": "freestyledozerov02.view",
-                "controlId": "app",
+                "controlId": "worklist",
                 "controlAggregation": "pages",
                 "bypassed": {
                     "target": [
@@ -98,6 +105,13 @@
                     "target": [
                         "object"
                     ]
+                },
+                {
+                    "pattern": "Modificar/{objectId}",
+                    "name": "update",
+                    "target": [
+                        "update"
+                    ]
                 }
             ],
             "targets": {
@@ -112,6 +126,11 @@
                     "viewId": "object",
                     "viewLevel": 2,
                     "title": "objectViewTitle"
+                },
+                "update": {
+                    "viewId": "update",
+                    "viewName": "Update",
+                    "viewLevel": 2
                 },
                 "objectNotFound": {
                     "viewName": "ObjectNotFound",
