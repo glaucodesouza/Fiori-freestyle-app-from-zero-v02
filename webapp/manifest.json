@@ -112,6 +112,13 @@
                     "target": [
                         "update"
                     ]
+                },
+                {
+                    "pattern": "create",
+                    "name": "create",
+                    "target": [
+                        "create"
+                    ]
                 }
             ],
             "targets": {
@@ -130,6 +137,11 @@
                 "update": {
                     "viewId": "update",
                     "viewName": "Update",
+                    "viewLevel": 2
+                },
+                "create": {
+                    "viewId": "create",
+                    "viewName": "Create",
                     "viewLevel": 2
                 },
                 "objectNotFound": {
