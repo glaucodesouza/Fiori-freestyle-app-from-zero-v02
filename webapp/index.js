@@ -21,7 +21,7 @@ sap.ui.define([
     new myComponentContainer({
         name: 'freestyledozerov02',
         settings: {
-            id: 'idfreestyledozerov02' //id da aplicacao
+            id: 'freestyledozerov02' //id da aplicacao
         },
         async: true
     }).placeAt('myIndexContent');

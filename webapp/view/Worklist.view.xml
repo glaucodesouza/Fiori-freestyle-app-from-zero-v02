@@ -13,7 +13,7 @@
         showFooter="{= ${messagez>/}.length > 0 }">
 
         <semantic:titleHeading>
-            <Title
+            <Title id="_IDGenTitle1"
                 text="{i18n>worklistTitle}"
                 level="H2"/>
         </semantic:titleHeading>
@@ -39,12 +39,12 @@
                 updateFinished=".onUpdateFinished">
 
                 <headerToolbar>
-                    <OverflowToolbar>
+                    <OverflowToolbar id="_IDGenOverflowToolbar1">
                         <Title
                             id="tableHeader"
                             text="{worklistView>/worklistTableTitle}"
                             level="H3"/>
-                        <ToolbarSpacer />
+                        <ToolbarSpacer id="_IDGenToolbarSpacer1" />
                         <Button id="btnCriar"           text="Criar"            press="onCriar"         type="Emphasized"/>
                         <Button id="btnDeletarMuitos"   text="Eliminar Vários"  press="onDeletarMuitos" type="Emphasized"/>
                         <Button id="btnAnexos"          text="Anexos"           press="onAnexos"        type="Emphasized"/>
@@ -53,7 +53,7 @@
                             tooltip="{i18n>worklistSearchTooltip}"
                             search=".onSearch2">
                             <layoutData>
-                                <OverflowToolbarLayoutData
+                                <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData1"
                                     maxWidth="200px"
                                     priority="NeverOverflow"/>
                             </layoutData>
@@ -74,33 +74,36 @@
                     <Column id="netprColumn" hAlign="End">
                         <Text text="Preço Líquido" id="netprColumnLabel"/>
                     </Column>
-                    <Column hAlign="End">
-                    <Text text="Aprovar Venda" />
+                    <Column id="_IDGenColumn1" hAlign="End">
+                    <Text id="_IDGenText1" text="Aprovar Venda" />
                     </Column>
-                        <Column hAlign="End">
-                    <Text text="Deletar" /> 
+                        <Column id="_IDGenColumn2" hAlign="End">
+                    <Text id="_IDGenText2" text="Deletar" /> 
                     </Column>
                 </columns>
 
                 <items>
-                    <ColumnListItem
+                    <ColumnListItem id="_IDGenColumnListItem1"
                         type="Navigation"
                         press=".onPress">
                         <cells>
-                            <ObjectIdentifier title="{Codigo}"/>
-                            <Text text="{Descricao}"/>
-                            <ObjectNumber number="{
+                            <ObjectIdentifier id="_IDGenObjectIdentifier1" title="{Codigo}"/>
+                            <Text id="_IDGenText3" text="{Descricao}"/>
+                            <ObjectNumber id="_IDGenObjectNumber1" 
+								number="{
                                     path: 'Kwmeng',
-                                    formatter: '.formatter.Decimal'
+									type: 'sap.ui.model.type.Float',
+                                    formatOptions: {decimals: 2}
                                 }" 
                                 unit="{Meins}" />
-                            <ObjectNumber number="{
+                            <ObjectNumber id="_IDGenObjectNumber2" number="{
                                     path: 'Netpr',
-                                    formatter: '.formatter.currencyUnit'
-                                }" 
+                                    type: 'sap.ui.model.type.Float',
+                                    formatOptions: {decimals: 2}
+                                }"
                                 unit="{Waerk}" />
-                            <Button icon="{= ${Aprovado} === true ? 'sap-icon://accept' : 'sap-icon://approve'}" press="onAprovarProduto" />
-                            <Button icon="sap-icon://delete"    press="onDeletar" />
+                            <Button id="_IDGenButton1" icon="{= ${Aprovado} === true ? 'sap-icon://accept' : 'sap-icon://approve'}" press="onAprovarProduto" />
+                            <Button id="_IDGenButton2" icon="sap-icon://delete"    press="onDeletar" />
                         </cells>
                     </ColumnListItem>
                 </items>
@@ -108,7 +111,7 @@
         </semantic:content> 
 
 		<semantic:footerCustomActions>
-			<Button 
+			<Button id="_IDGenButton3" 
 			icon="sap-icon://alert"
 			text="{= ${messagez>/}.length }"
 			visible="{= ${messagez>/}.length > 0 }"

@@ -2,7 +2,7 @@
     "_version": "1.12.0",
 
     "sap.app": {
-        "id": "idfreestyledozerov02",
+        "id": "freestyledozerov02",
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "title": "Title of App from Zero v2",
@@ -41,12 +41,7 @@
     },
 
     "sap.ui5": {
-        "rootView": {
-            "viewName": "freestyledozerov02.view.Worklist",
-            "type": "XML",
-            "async": true,
-            "id": "app"
-        },
+
         "handleValidation": true,
         "flexEnabled": true,
         "dependencies": {
@@ -127,6 +122,12 @@
                     "viewId": "notFound"
                 }
             }
+        },
+        "rootView": {
+            "viewName": "freestyledozerov02.view.Worklist",
+            "type": "XML",
+            "async": true,
+            "id": "app"
         }
     }
   }
