@@ -11,13 +11,13 @@ sap.ui.define(
         return BaseController.extend("fresstyledozerov02.controller.Create", {
             onInit: function () {
 
-                var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+                let oRouter = sap.ui.core.UIComponent.getRouterFor(this);
                 oRouter
                     .getRoute("create")
                     .attachPatternMatched(this._onCreateMatched, this);
 
                 //MODEL p/ iniciar valors
-                var oViewModel = new JSONModel({
+                let oViewModel = new JSONModel({
                     Codigo: 0,
                     Descricao: "",
                     Kwmeng: "0.000",
@@ -29,10 +29,10 @@ sap.ui.define(
             },
 
             _onCreateMatched: function (oEvent) {
-                var m = this.getView().getModel();
+                let m = this.getView().getModel();
                 m.metadataLoaded().then(
                     function () {
-                        var oContext = m.createEntry("/Z270CADPRODUTOSSet", {
+                        let oContext = m.createEntry("/Z270CADPRODUTOSSet", {
                             properties: {
                                 Descricao: "",
                                 Kwmeng: "0.00",
@@ -51,13 +51,13 @@ sap.ui.define(
             },
 
             onNavBack: function () {
-                var oHistory = History.getInstance();
-                var sPreviousHash = oHistory.getPreviousHash();
+                let oHistory = History.getInstance();
+                let sPreviousHash = oHistory.getPreviousHash();
 
                 if (sPreviousHash !== undefined) {
                     window.history.go(-1);
                 } else {
-                    var oRouter = UIComponent.getRouterFor(this);
+                    let oRouter = UIComponent.getRouterFor(this);
                     oRouter.navTo("worklist", {}, true);
                 }
             },
@@ -68,9 +68,9 @@ sap.ui.define(
                 //Limpar mensagens antigas
                 sap.ui.getCore().getMessageManager().removeAllMessages();
 
-                var oModel = this.getView().getModel();
+                let oModel = this.getView().getModel();
 
-                var dados = {
+                let dados = {
                     // Codigo:     this.byId("inpCodigo").getValue(),
                     Descricao: this.byId("inpDescricao").getValue(),
                     Kwmeng: this.byId("inpKwmeng").getValue(),
@@ -83,10 +83,10 @@ sap.ui.define(
                     success: function (oDados, response) {
                         //var lv_message = JSON.parse(response.headers["sap-message"]);
                         //this.getView().setBusy(false);
-                        var lv_message = JSON.parse(response.headers["sap-message"]);
+                        let lv_message = JSON.parse(response.headers["sap-message"]);
                         sap.m.MessageToast.show(
                             "Produto " + oDados.Codigo + " criado com sucesso !", {
-                                duration: 7000,                  // default
+                                duration: 5000,                  // default
                                 width: "15em",                   // default
                                 my: "center bottom",             // default
                                 at: "center bottom",             // default
@@ -97,7 +97,7 @@ sap.ui.define(
                                 autoClose: true,                 // default
                                 animationTimingFunction: "ease", // default
                                 animationDuration: 1000,         // default
-                                closeOnBrowserNavigation: true   // default);
+                                closeOnBrowserNavigation: false   // default);
                             });
                         //var mensagem = JSON.parse(resposta.headers["sap-message"]);
                         // teste 2
@@ -113,10 +113,10 @@ sap.ui.define(
                         //this.onNavBack("object", parseInt(dados.Codigo) );
                     }.bind(this),
                     error: function (Error) {
-                        var lv_mensagem = JSON.parse(Error.responseText).error.message
+                        let lv_mensagem = JSON.parse(Error.responseText).error.message
                             .value;
                         MessageToast.show(lv_mensagem + dados.Descricao, {
-                            duration: 6000,                  // default
+                            duration: 5000,                  // default
                             width: "15em",                   // default
                             my: "center bottom",             // default
                             at: "center bottom",             // default
@@ -127,7 +127,7 @@ sap.ui.define(
                             autoClose: true,                 // default
                             animationTimingFunction: "ease", // default
                             animationDuration: 1000,         // default
-                            closeOnBrowserNavigation: true   // default);
+                            closeOnBrowserNavigation: false   // default);
                         });
                         this.onNavBack();
                         // MessageToast.show("Aconteceu um erro.");
